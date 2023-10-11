@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+<h1 align="center">Stegano</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+	<a href="https://github.com/wasimreja/stegano/stargazers">
+		<img alt="Stargazers" src="https://img.shields.io/github/stars/wasimreja/stegano?style=for-the-badge&color=C9CBFF&labelColor=302D41"></a>
+	<a href="https://github.com/wasimreja/stegano/forks">
+		<img alt="Releases" src="https://img.shields.io/github/forks/wasimreja/stegano?style=for-the-badge&&color=F2CDCD&&labelColor=302D41"/></a>
+	<a href="https://github.com/wasimreja/stegano/issues">
+		<img alt="Issues" src="https://img.shields.io/github/issues/wasimreja/stegano?style=for-the-badge&color=B5E8E0&labelColor=302D41"></a>
+</p>
 
-## Available Scripts
+<p align="center">
+Stegano is a steganography application which uses LSB Steganography to encode text into image files.
+</p>
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📝 Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Steganography is the practice of concealing a secret message within an ordinary message or file, without anyone else being aware that there is a hidden message. The goal of steganography is to hide the existence of the message, so that it can be transmitted undetected. Unlike cryptography, which relies on encryption to make a message unreadable to anyone who doesn't have the key, steganography does not alter the message in any way. Instead, it hides the message within the data of another file, such as an image or audio file, by subtly changing certain bits of information. Steganography can be used for a variety of purposes, from covert communication to digital watermarking, and has been used throughout history in various forms.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Our steganography application provides a user-friendly interface for users to hide text messages inside images using the LSB technique. It also allows users to decode text from an encoded image to retrieve hidden messages.
 
-### `npm test`
+## 🌱 Implementation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application converts the entire message to Base64 to avoid any conversion loss, then it converts it to bytes hence to its bits. Then, it gets each pixel, breaks each pixel into its channels (Red, Green, Blue and Alpha) and breaks down each channel into bits. Once this is done, rest is just replacing each bit with the message's bits. Depending on your image, this process can take a while. Once the process is completed, you can download the image.  
 
-### `npm run build`
+## ✨ Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Hide text messages inside images using LSB steganography.
+- Decode hidden text from an encoded image.
+- Support for multiple image formats (e.g., PNG, JPEG).
+- Intuitive and responsive user interface built with React JS.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) installed on your computer. From your command line:
 
-### `npm run eject`
+```bash
+# Clone this repository
+$ git clone https://github.com/wasimreja/stegano.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Go into the repository
+$ cd stegano
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Install dependencies
+$ npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Run the app
+$ npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center"><a href="https://github.com/wasimreja/stegano/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=302d41&colorB=b7bdf8"/></a></p>
