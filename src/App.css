@@ -42,7 +42,10 @@ body {
 }
 
 .navbar {
-  padding: 2.5rem;
+  padding: 2rem;
+  background-color: #5a4fcf;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .nav {
@@ -54,11 +57,17 @@ body {
   justify-content: right;
 }
 
-.nav li a {
+.MenuItem {
   padding: 0 20px;
   color: #fff;
   line-height: 40px;
   text-decoration: none;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 
 .btn,
@@ -82,6 +91,12 @@ body {
   font-size: 1rem !important;
   min-width: 5rem;
   margin: 2rem 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
 }
 
 .btn-lg {
@@ -91,7 +106,8 @@ body {
 .btn:hover,
 .btn-xs:hover,
 .btn-md:hover,
-.btn-lg:hover {
+.btn-lg:hover,
+.MenuItem:hover {
   opacity: 0.6;
 }
 
@@ -131,7 +147,7 @@ subtitle {
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 3rem;
+  padding: 5rem 3rem;
   align-items: center;
 }
 
@@ -163,7 +179,7 @@ subtitle {
 
 .AboutSection {
   padding: 3rem;
-  padding-top: 0;
+  text-align: justify;
 }
 
 .ErrorPanel {
@@ -216,18 +232,62 @@ subtitle {
   outline: none;
 }
 
+.MobileMenuToggle {
+  display: none;
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
-  .nav li a {
-    padding: 0 10px;
-    line-height: 30px;
-  }
   .BrandName {
     margin-left: 0.5rem;
     font-size: 1.5rem;
   }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    background-color: #5a4fcf;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    z-index: 1;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .navbar {
+    display: flex;
+  }
+
+  .MobileMenuToggle {
+    display: block;
+    position: absolute;
+    right: 2rem;
+    cursor: pointer;
+  }
+
+  .MobileMenuToggle i {
+    font-size: 24px;
+  }
+
+  .MenuItem {
+    padding: 20px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+  }
+
   .ImageCanvas {
     width: 90%;
   }
+
   .InputTextArea {
     width: 70vw;
     height: 205px;
