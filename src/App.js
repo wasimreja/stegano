@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ImageCrypt from "./pages/ImageCrypt";
 import ImageDecrypt from "./pages/ImageDecrypt";
@@ -7,14 +7,9 @@ import "./App.css";
 import "font-awesome/css/font-awesome.min.css";
 
 function App() {
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
+    document.getElementById("burger").checked =
+      !document.getElementById("burger").checked;
   };
 
   return (
@@ -23,23 +18,31 @@ function App() {
         <a href="/" className="BrandName">
           Stegano
         </a>
-        <div className="MobileMenuToggle" onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? (
-            <i className="fa fa-times" />
-          ) : (
-            <i className="fa fa-bars" />
-          )}
-        </div>
-        <div className={`nav ${isMobileMenuOpen ? "open" : ""}`}>
-          <Link to="/" className="MenuItem" onClick={closeMobileMenu}>
-            Encode
-          </Link>
-          <Link to="/decode" className="MenuItem" onClick={closeMobileMenu}>
-            Decode
-          </Link>
-          <Link to="/about" className="MenuItem" onClick={closeMobileMenu}>
-            About
-          </Link>
+        <input id="burger" type="checkbox" />
+
+        <label for="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div className="nav">
+          <ul>
+            <li>
+              <Link to="/" className="MenuItem" onClick={closeMobileMenu}>
+                Encode
+              </Link>
+            </li>
+            <li>
+              <Link to="/decode" className="MenuItem" onClick={closeMobileMenu}>
+                Decode
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="MenuItem" onClick={closeMobileMenu}>
+                About
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
 
