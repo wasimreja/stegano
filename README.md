@@ -23,7 +23,30 @@ Our steganography application provides a user-friendly interface for users to hi
 
 ## 🌱 Implementation
 
-The application converts the entire message to Base64 to avoid any conversion loss, then it converts it to bytes hence to its bits. Then, it gets each pixel, breaks each pixel into its channels (Red, Green, Blue and Alpha) and breaks down each channel into bits. Once this is done, rest is just replacing each bit with the message's bits. Depending on your image, this process can take a while. Once the process is completed, you can download the image.  
+### Working Diagram
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/2-72.png">
+
+### Encryption Algorithm
+- Begin
+- Input: Cover_Image, Secret_Message;
+- Transfer Secret_Message into Text;
+- Convert Text to Binary_Codes;
+- Set BitsPerUnit to Zero;
+- Encode Message to Binary_Codes;
+- Add by 2 unit for bitsPerUnit;
+- Output: Stego_Image;
+- End
+
+### Decryption Algorithm
+- Begin
+- Input: Stego_Image
+- Calculate BitsPerUnit;
+- Decode All_Binary_Codes;
+- Shift by 2 unit for bitsPerUnit;
+- Convert Binary_Codes to Text;
+- Open Text;
+- Output Secret_Message;
+- End
 
 ## ✨ Features
 
